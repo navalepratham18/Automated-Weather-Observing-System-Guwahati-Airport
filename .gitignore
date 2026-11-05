@@ -1,0 +1,30 @@
+# Raw and generated datasets can be large and may contain provider-controlled data.
+# Raw provider data can be large and should remain outside version control.
+00_source_original/**
+Guwahati-RAW-DATA/**
+01_source_selected/**
+02_sensor_csv/**
+03_daily_merged/**
+04_stage1_preprocessed/**
+05_stage2_flagged/**
+06_final_cleaned/**
+07_lstm_ready/**
+08_unified_dataset/**
+09_reports/**
+10_models/**
+
+train_lucknow_lstm.ipynb
+
+# Large top-level datasets.
+*.csv
+
+# Keep the directory structure in Git.
+!*/.gitkeep
+!*/README.md
+
+# Local Python/editor files.
+__pycache__/
+*.py[cod]
+.venv/
+.ipynb_checkpoints/
+train_lucknow_lstm.ipynb
