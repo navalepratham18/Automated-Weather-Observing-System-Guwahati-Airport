@@ -16,3 +16,10 @@ Generated output is written to
 
 This helper is separate from the numbered Stage 4 pipeline, which prepares the
 canonical daily LSTM-ready files.
+
+## Model benchmarking
+
+`benchmark_guwahati_models.py` benchmarks classical ML and deep sequence models
+with the same chronological split, lookback, target masking, and measured-label
+evaluation. Generated summaries and checkpoints are written to
+`10_models/guwahati_model_benchmark/`.

@@ -16,3 +16,5 @@ assumptions, target columns, and evaluation results.
   `VIS_Visibility_MOR`. Its generated data and artifacts are isolated under
   `07_lstm_ready/vertical_visibility_experiment/` and
   `10_models/guwahati_vertical_visibility_experiment/`.
+- `benchmark_guwahati_models.ipynb` compares classical ML and deep sequence
+  models using the shared chronological benchmark configuration.
