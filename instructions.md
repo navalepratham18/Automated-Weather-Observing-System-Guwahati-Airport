@@ -258,6 +258,28 @@ Its rules are:
 The script prints counts for recovered clear-sky rows, fog contradictions, and
 dead-sensor records. It does not create a separate CSV report.
 
+### Optional vertical-visibility fill experiments
+
+These are separate experiments, not numbered pipeline stages:
+
+- [`11_impute_cloud_vertical_visibility.py`](./scripts/11_impute_cloud_vertical_visibility.py)
+  predicts missing vertical visibility from measured rows and preserves
+  originals in separate `*_FILLED` and `*_MODEL_IMPUTED` columns.
+- [`12_rule_based_fill_cloud_visibility.py`](./scripts/12_rule_based_fill_cloud_visibility.py)
+  fills missing values using conditional medians and deterministic weather
+  rules, and adds fill method, reason, and confidence columns.
+- [`07a_prepare_guwahati_target_filtered_mlready.py`](./scripts/07a_prepare_guwahati_target_filtered_mlready.py)
+  is an alternate Stage 4 comparison that filters missing MOR targets and
+  long wind-gap intervals. It writes under
+  `07_lstm_ready/target_filtered_experiment/` and does not replace the
+  canonical [`07_stage4_mlreadydata.py`](./scripts/07_stage4_mlreadydata.py).
+- [`10_prepare_guwahati_vertical_visibility_mlready.py`](./scripts/10_prepare_guwahati_vertical_visibility_mlready.py)
+  prepares an additional vertical-visibility experiment dataset from the
+  physics-corrected unified dataset.
+
+All three scripts resolve their default paths from the repository root. Do not
+treat filled estimates as observed ground truth when evaluating a model.
+
 ## Primary model notebook and actual results
 
 The most important notebook is
